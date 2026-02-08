@@ -1,0 +1,31 @@
+create calendar --name Boston --timezone America/New_York
+create calendar --name Oakland --timezone America/Los_Angeles
+use calendar --name Boston
+create event Meeting on 2025-06-04
+create event "Weekly Conference" on 2025-06-04 repeats MWF for 5 times
+create event "Wake up" on 2025-06-02 repeats MTWRF until 2025-06-12
+create event Party from 2025-06-01T15:00 to 2025-06-01T17:00
+create event Dinner from 2025-06-01T17:00 to 2025-06-01T18:00 repeats MTWRFSU for 30 times
+create event CS3500 from 2025-06-05T11:40 to 2025-06-05T13:20 repeats MTWR until 2025-06-18
+edit event end Party from 2025-06-01T15:00 to 2025-06-01T17:00 with 2025-06-01T20:00
+edit event location Meeting from 2025-06-04T08:00 to 2025-06-04T17:00 with Online
+print events on 2025-06-01
+print events from 2025-06-01T00:00 to 2025-07-01T00:00
+show status on 2025-06-18T12:00
+show status on 2025-06-18T14:00
+edit events subject Dinner from 2025-06-15T17:00 with "New Dinner"
+edit events status "New Dinner" from 2025-06-15T17:00 with Private
+edit events location "New Dinner" from 2025-06-15T17:00 with Physical
+edit series subject CS3500 from 2025-06-10T11:40 with OOD
+edit series description OOD from 2025-06-10T11:40 with "This class is draining the life out of me"
+edit events start "Weekly Conference" from 2025-06-04T08:00 with 2025-06-02T08:00
+print events from 2025-06-01T00:00 to 2025-07-01T00:00
+edit calendar --name Boston --property name Beijing
+edit calendar --name Beijing --property timezone Asia/Shanghai
+print events from 2025-06-01T00:00 to 2025-07-01T00:00
+copy event OOD on 2025-06-05T23:40 --target Oakland to 2025-05-05T11:40
+copy events on 2025-06-02 --target Oakland to 2025-06-02
+copy events between 2025-06-01 and 2025-06-05 --target Oakland to 2025-07-01
+use calendar --name Oakland
+print events from 2025-05-01T00:00 to 2025-08-01T00:00
+exit
